@@ -1,0 +1,25 @@
+server:
+  port: 8094
+
+  context-path: /
+  maxPostSize: "0"
+  error:
+      path: /404
+spring:
+#spring.http.multipart.max-file-size=4Mb
+## 最大支持请求大小
+##spring.http.multipart.max-request-size=10Mb
+
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+    username: meta
+    password: meta
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  type-aliases-package: cn.tedu.meta.pojo
